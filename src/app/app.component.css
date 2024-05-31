@@ -1,0 +1,11 @@
+
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("https://whvn.cc/9dw781");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
