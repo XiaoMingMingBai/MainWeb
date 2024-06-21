@@ -35,17 +35,12 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
-          SSH_CONFIG_SERVER: ${{ secrets.SSH_CONFIG_SERVER }}
         run: |
           mkdir -p ~/.ssh
-          echo "$SSH_PRIVATE_KEY_BASE64" | base64 -d > ~/.ssh/id_rsa
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-
-          eval $(ssh-agent -s)
-          ssh-add ~/.ssh/id_rsa
-
           echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-          echo "$SSH_CONFIG_SERVER" > ~/.ssh/config
+          rsync -avz --delete dist/main-web/ 120.46.37.39:/var/www/angular-app/
           ssh -o StrictHostKeyChecking=no ming@120.46.37.39 'bash -s' < deploy_script.sh
 
           #!/bin/bash
