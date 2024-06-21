@@ -1,11 +1,11 @@
 # Navigate to the Nginx root directory where your Angular project is served
-cd /var/www/angular-app
+cd ~/app/angular-app
 
 # Remove old files
-sudo rm -rf */
+rm -rf */
 
 # Copy new build files from the GitHub Actions workspace
-sudo cp -r ~/path/to/github/workspace/dist/angular-app/* .
+cp -r ~/path/to/github/workspace/dist/angular-app/* .
 
 # Restart Nginx if necessary (optional)
-sudo systemctl restart nginx
+# sudo systemctl restart nginx
