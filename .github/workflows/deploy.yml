@@ -40,12 +40,10 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
 
-          eval $(ssh-agent -s)
-          ssh-add ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
 
           echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
           echo "$SSH_CONFIG_SERVER" > ~/.ssh/config
-          chmod 600 ~/.ssh/id_rsa
           ssh -o StrictHostKeyChecking=no ming@120.46.37.39 'bash -s' < deploy_script.sh
 
           #!/bin/bash
