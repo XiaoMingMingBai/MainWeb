@@ -41,6 +41,6 @@ jobs:
           sudo chmod 600 ~/.ssh/id_rsa
           echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
 
-          rsync -avz --delete dist/main-web/ 120.46.37.39:/var/www/angular-app/
+          scp -r dist/main-web/* ming@120.46.37.39:/var/www/angular-app/
           # ssh -o StrictHostKeyChecking=no ming@120.46.37.39 'bash -s' < deploy_script.sh
           #!/bin/bash
