@@ -1,7 +1,7 @@
 # Navigate to the Nginx root directory where your Angular project is served
 cd /var/www/angular-app
 
-# mkdir test
+mkdir test
 
 # Remove old files
 # rm -rf *
