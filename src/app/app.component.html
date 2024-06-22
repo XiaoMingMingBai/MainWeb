@@ -1,3 +1,11 @@
 <div>
-  <app-heroes></app-heroes>
+  @for (card of cardInfo; track card.name) {
+  <app-heroes
+    heroesName="{{ card.name }}"
+    heroesInfo="{{ card.info }}"
+    heroesImage="{{ card.image }}"
+    heroesUrl="{{ card.url }}"
+    heroesAbout="{{ card.about }}"
+  ></app-heroes>
+  }
 </div>
