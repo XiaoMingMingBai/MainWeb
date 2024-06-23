@@ -17,7 +17,7 @@ export class AppComponent {
     {
       name: 'Owncloud',
       info: 'Owncloud is a suite of client-server software for creating file hosting services and using them. ',
-      url: 'http://localhost:1212/',
+      url: 'http://120.46.37.39/owncloud/',
       image: '../assets/oc-logo-circle-kiteworks.svg',
       about:
         'Owncloud is a suite of client-server software for creating file hosting services and using them. Owncloud is functionally very similar to the widely used Dropbox, with the primary functional difference being that Owncloud is free and open-source, and thereby allowing anyone to install and operate it without charge on a private server.',
@@ -25,7 +25,7 @@ export class AppComponent {
     {
       name: 'MyWeb',
       info: 'This is a test website for the purpose of learning Angular.',
-      url: 'http://localhost:1213/',
+      url: 'http://120.46.37.39/mainweb/',
       about: 'This is test.',
     },
   ];
